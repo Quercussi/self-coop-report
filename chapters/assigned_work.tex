@@ -1,0 +1,68 @@
+\chapter{\ifenglish Assigned Work and Terms of Reference\else งานที่รับมอบหมายและรางขอบเขตงาน\fi}
+please extend this
+
+
+\section{\ifenglish Terms of Reference for Cooperative Education\else รางขอบเขตงานกระบวนวิชาสหกิจศึกษา \fi}
+Starting salary: 30k baht. Increase once a year, based on the employee's performace.
+
+\section{\ifenglish Assigned Work\else งานที่ได้รับมอบหมาย \fi}
+% TODO: lengthen this
+งานที่ได้รับมอบหมาย โดยส่วนใหญ่แล้วจะเป็นงานที่ได้ทำงานกับทีม xPlatform ซึ่งเป็นโปรเจคใหญ่ของบริษัท เอสซีบี เทคเอกซ์ ด้วยเช่นกัน โดยงานที่ได้รับมอบหมายจะสามารถแบ่งออกได้เป็น 4 งานหลักดังนี้
+
+\subsection{\ifenglish xPlatform Change Runbook​ Feature\else ฟีเจอร์ xPlatfrom Change Runbook\fi}
+% TODO: clarify this
+ในขั้นตอนของการพัฒนาซอฟต์แวร์นั้น ถ้าหากว่าผู้พัฒนานั้นจำเป็นต้องการไปปรับเปลี่ยน configuration ของระบบต่าง ๆ ที่เกี่ยวข้องนั้น ผู้พัฒนาการจะไม่สิทธิในการที่จะไปปรับเปลี่ยนส่วนนั้นได้โดยตรง อย่างเช่น ขั้นตอนการ deploy แต่ละส่วนของระบบรวม การปรับเปลี่ยนสิทธิการเข้าถึงข้อมูล ซึ่งการเปลี่ยนแปลงเหล่านี้จะต้องไปแจ้งพนักงานในแผนกอื่น ๆ ที่มีสิทธิในการเข้าถึงเท่านั้นอย่างเช่น อย่างเช่น DevOps IT แผนกผู้บริหารฐานข้อมูล 
+
+การทำงานแต่ละขั้นตอน จะมีชื่อเรียกว่า Activity รายงานขั้นตอนของการทำงานที่จะแจ้งแผนกต่าง ๆ นั้นจะมีชื่อว่า Runbook โดยที่ขั้นตอนดังกล่าวนี้โดยปกติจะทำรวมกับการเปลี่ยนแปลงเวอร์ชั่นของซอฟต์แวร์ที่จะเรียกว่า Change หรือที่มักจักเป็นที่รู้จักกันว่า Release โดยปกติแล้ว การขั้นตอนการเขียน Runbook นั้นจะลงเองด้วยมือ ซึ่งเป็นเรื่องที่ค่อนข้างเสียเวลามาก และสามารถเกิดข้อผิดพลาดขณะการเขียนได้ง่าย เราจึงได้สร้างฟีเจอร์ Change Runbook เพื่อช่วยให้นักพัฒนาซอฟต์แวร์สามารถรายงานขั้นตอนการทำงานได้สะดวกขึ้น
+
+\[\text{add a blurred change runbook image here}\]
+
+โดยที่ฟีเจอร์นี้จะมีความต้องการดังนี้
+\begin{enumerate}
+    \item ในแต่ละ Change จะมีอยู่หนึ่ง Runbook โดยที่ แต่ละ Runbook จะมีอยู่หลาย ๆ กลุ่มงาน (Activity Groups) แล้วแต่ละ Activity Groups จะมีอยู่หลาย ๆ Activities ในแต่ละ Activity จะต้องประกอบไปด้วยข้อมูล 
+    \begin{enumerate}
+        \item ชื่อ (Title)
+        \item รายละเอียด (Description) 
+        \item แท็ก (Hashtag)
+        \item ผู้ที่รับผิดชอบ (Owner) (แผนกหรือพนังงานที่มีส่วนเกี่ยวข้องในการทำงาน)
+        \item เวลาเริ่มต้นและเวลาสิ้นสุดของการทำงานขั้นตอนนั้น ๆ (Impl-start กับ Impl-end)
+        \item Activities ที่จะต้องถูกทำงานเสร็จก่อน (Dependency)
+        \item ประเภทของ Activity (Deploy กับ Rollback)
+        \item สถานะการทำงาน (กำลังดำเนินอยู่ สำเร็จ ล่าช้า 10 นาที ล่าช้า 20 นาที และ ล่าช้าจนมีผลกระทบ)
+        \item ความก้าวหน้าของงาน (0\% 20\% 40\% 60\% 80\% และ 100\%)
+    \end{enumerate}
+    ซึ่งจะมีแผนผังแสดงความสัมพันธ์ระว่าง Entity ดังนี้
+    \[\text{insert ER diagram here}\]
+    \item ผู้ที่จะสามารถเปลี่ยนแปลงข้อมูล (Update) หรือลบ (Delete) Activity ได้ จะเป็นผู้ที่สร้าง Activity นั้น ๆ หรือ Product Manager กับ Product Owner (PO \& PM)
+    \item ในแต่ละ Activity จะสามารถเปลี่ยนแปลงสถานะการทำงานหรือความก้าวหน้าของงานได้ ซึ่งการทำเช่นนี้จะมีเรียกว่าการ Marking โดยที่ผู้ที่จะสามารถ Mark ได้จะเป็นเพียงแค่ผู้ที่มีหน้าที่รับผิดชอบ (Responsible people) หรือผู้ใช้ที่มีหน้าที่เป็น PO \& PM ซึ่งผู้ Mark จะสามารถระบุโน้ต หรือว่า Issue ที่เกี่ยวข้องกับการเปลี่ยนแปลงนั้นได้
+    \item ในแต่ละ Activity จะสามารถแบ่งวิธีการหนดเวลาได้เป็น 2 รูปแบบ ได้แก่ Absolute กับ Relative โดยที่ 
+    \begin{enumerate}
+        \item Absolute Activity คือ Activity ที่ในขณะที่ถูก Create หรือ Update นั้น ผู้ใช้งานจะต้องระบุเวลาเริ่มต้นและเวลาจบของงาน โดยที่เวลาเริ่มต้นของ Activity ดังกล่าวต้องมาหลังเวลาจบของทุก ๆ Dependency (Time Constraint)
+        \item Relative Activity คือ Activity ที่ในขณะที่ถูก Create หรือ Update นั้น ผู้ใช้จะระบุเพียงแค่ระยะการทำงานของ Activity นั้น ๆ โดยที่เวลาเริ่มต้นกับเวลาจบนั้นจะขึ้นอยู่กับ Time Constraint กล่าวคือ เวลาเริ่มต้นของ Activity นั้น ๆ จะเท่ากับ Time Constraint เสมอ ซึ่งหมายความว่าทุก ๆ Relative Activity จะจำเป็นต้องมีอย่างน้อย 1 Dependency
+    \end{enumerate}
+    \item ในการ Update Activity นั้น อาจเกิดกรณีทีี Activity นั้นเป็น Dependency ของ Activity ตัวอื่น ๆ ได้ ซึ่งเวลาการทำงานของ Activity ดังกล่าวนั้นจะจำเป็นต้องเปลี่ยนไปอัตโนมัติตามกฎดังนี้
+    \begin{enumerate}
+        \item หาก Time Constraint ของ Absolute Activity ถูกเลื่อนไปอยู่หลัง Activity นั้น เวลาในการทำงานของ Activity จะถูกเลื่อนตามไปอยู่หลัง Time Constraint โดยผู้ใช้สามารถเลือกที่จะ Bypass Absolute Activity เพื่อไม่ให้เวลาการทำงานของ Activity เปลี่ยนแปลง แต่จะทำให้ความเป็น Dependency ของ Activities ที่เสร็จหลังก่อนที่ Absolute Activity จะเริ่ม นั้นถูกยกเลิก 
+        \item Relative Activity จะต้องเปลี่ยนเวลาใหม่ถ้าหาก Time Constraint เปลี่ยน
+    \end{enumerate}
+    \[\text{add update example here}\]
+    \item ในการ Delete Activity นั้น ถ้าหากตัวท่ีกำลังถูกลบอยู่เป็น Dependency ตัวเดียวของ Required Activity  Activity นั้นจะถูกโปรโมทให้เป็น Absolute Activity แทน
+    \[\text{add delete example here}\]
+    \item ผู้ใช้สามารถดึงข้อมูล (Import) จากไฟล์ประเภท CSV ได้ % TODO: complete this
+    \item ผู้ใช้สามารถดึงข้อมูลของ Issues จากเว็บไซต์ Jira ในการสร้าง​ Activity ได้ โดยที่ผู้ใช้งานจะสามารถคัดเลือกข้อมูล (Query) ได้อยู่สองวิธี
+    \begin{enumerate}
+        \item การ Query แบบ Basic: ผู้ใช้จะต้องระบุ โค้ดของโปรเจค Label ของ Issue และ ประเภทของ Issue
+        \item การ Query ด้วย Jira Query Lanauge (JQL) ซึ่งเป็นภาษาที่ช่วยในการค้นหาข้อมูลใด ๆ ก็ตามภายในเว็บไซต์ของ Jira
+    \end{enumerate}
+    โดยที่วิธีการดึงข้อมูลนี้จะแตกต่างกันตาม Type ของ Field ที่กำลังถูกดึง นอกจากนี้ Activity ที่ถูกดึงมา จะสามารถลิงก์กลับไปบนหน้่าเว็บเพจของ Issue นั้น ๆ บน Jira ได้ด้วยเช่นกัน
+    \[\text{example jira issue}\]
+    \item การ Import จากแหล่งใดก็ตามจะได้ประเภทการกำหนดเวลาแบบ Absolute เสมอ เนื่องจากการ Import จะไม่สามารถระบุ Dependency ได้ ผู้ใช้จะสามารถเพิ่ม Dependency ด้วยการ Update ทีหลัง
+    \item ผู้ใช้การจะสามารถส่งออกข้อมูล (Export) ของ Runbook ออกเป็นไฟล์ .xlsx ได้
+
+\end{enumerate}
+
+\subsection{\ifenglish Fast Easy Tasks\else งานร่วมกับทีม fast easy\fi}
+
+\subsection{\ifenglish Keycloak user credentail data synchronisation\else งานการบันทึก credential ของผู้ใช้ลงซอฟต์แวร์ Keycloak\fi}
+
+\subsection{TBA}

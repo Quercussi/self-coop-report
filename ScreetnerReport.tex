@@ -28,6 +28,9 @@
 \usepackage{afterpage} % for outputting
 \usepackage{pdflscape} % for landscape figures and tables. 
 
+\usepackage{float} % for table
+\usepackage{multirow} % Add this package in the preamble
+
 %% Some other useful packages. Look these up to find out how to use
 %% them.
 % \usepackage{natbib}    % for author-year citation styles
@@ -37,6 +40,8 @@
 % \usepackage{subfigure} % for subfigures within a figure
 % \usepackage{pstricks,pdftricks} % for access to special PostScript and PDF commands
 % \usepackage{nomencl}   % if you have a list of abbreviations
+
+\usepackage{pgfgantt} % for gantt chart
 
 %% if you're having problems with overfull boxes, you may need to increase
 %% the tolerance to 9999
@@ -78,6 +83,7 @@
 \include{chapters/background}
 \include{chapters/approach}
 \include{chapters/company_products}
+\include{chapters/assigned_work}
 \include{chapters/eval}
 % \ifproject
 % \include{chapters/conclusion}
