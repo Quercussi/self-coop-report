@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+Actor User as usr
+Boundary xPlatformService as xp
+Database xPlatformDB as db
+Control Keycloak as kc
+
+== User Creation Request ==
+usr -> xp: Request to create new user
+
+== Data Recording ==
+xp -> db: Save user details to database
+db -> xp: User details recorded
+
+== User Setup in Keycloak ==
+xp -> kc: Create user profile in Keycloak
+kc -> xp: User profile created
+
+== Final Response ==
+xp -> usr: User created successfully
+
+
+@enduml

@@ -7,12 +7,12 @@
 \projectNo{S007-2/66}
 \acadyear{2024}
 
-\titleTH{สกรีทเนอร์: ระบบสำรวจถนนสำหรับการจัดการสินทรัพย์เมือง}
-\titleEN{Screetner: street scanner system for urban asset management}
+\titleTH{การพัฒนาซอฟต์แวร์ไมโครเซอร์วิสเชิงพาณิชย์ ณ บริษัท เอสซีบี เทคเอกซ์}
+\titleEN{Commercial Microservices Software Developement at SCB TechX}
 
 \author{นายธนภัทร สมสิทธิ์}{Thanapat Somsit}{640610639}
 
-\cpeadvisor{santi}
+\cpeadvisor{patiwet}
 \cpecommittee{karn}
 \cpecommittee{navadon}
 
@@ -42,6 +42,31 @@
 % \usepackage{nomencl}   % if you have a list of abbreviations
 
 \usepackage{pgfgantt} % for gantt chart
+
+\usepackage{listings}
+\usepackage{inconsolata}
+
+% \usepackage{fontspec}
+% \setmonofont{Consolas}
+
+% \newfontfamily{\ttconsolas}{Consolas}
+
+% \renewcommand{\ttdefault}{pcr}
+% \newcommand{\listingsttfamily}{\fontfamily{inconsolata}\small}
+
+\lstset{
+  frame=tb,
+  % language=GraphQL,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=2
+}
 
 %% if you're having problems with overfull boxes, you may need to increase
 %% the tolerance to 9999
@@ -80,11 +105,15 @@
 \normalspacing \setcounter{page}{1} \pagenumbering{arabic} \pagestyle{cpecmu}
 
 \include{chapters/intro}
-\include{chapters/background}
-\include{chapters/approach}
+
+% \include{chapters/background}
+% \include{chapters/approach}
+
 \include{chapters/company_products}
 \include{chapters/assigned_work}
-\include{chapters/eval}
+\include{chapters/work_result}
+\include{chapters/work_environment}
+
 % \ifproject
 % \include{chapters/conclusion}
 % \fi

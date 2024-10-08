@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+
+Actor User
+
+node "Application Server" {
+    Control Server
+    Process "Decision Logic"
+}
+
+database "DB 1"
+database "DB 2"
+
+'together {
+'    database "DB 3"
+'    database "DB 4"
+'    database "DB 6"
+'}
+
+[User] --> [Server] : Transfer Money
+[Server] --> [Decision Logic] : Process Transaction Data
+[Decision Logic] --> [DB 1]
+[Decision Logic] --> [DB 2]
+@enduml

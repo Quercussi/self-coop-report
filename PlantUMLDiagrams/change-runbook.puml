@@ -1,0 +1,87 @@
+@startchen
+'left to right direction
+
+entity Change {
+    changeId <<key>>
+    changeTitle
+}
+
+entity ActivityGroup {
+    activityGroupId <<key>>
+    activityGroupIdTitle
+}
+
+entity Activity {
+    activityId <<key>>
+    activityTitle
+    activityDescription
+    activityType
+    activitySchedulingType
+}
+
+entity User {
+    userId <<key>>
+    userName
+    userEmail
+    companyCode
+}
+
+entity Hashtag{
+    hashtagId <<key>>
+    hashtagTitle
+}
+
+entity ActivityMark {
+    activityMarkId <<key>>
+    statusFrom
+    statusTo
+    progressTo
+    progressFrom
+    Issue
+    markedUser
+}
+
+relationship "Change of" as  CtoAG {
+}
+
+relationship "Group of" as  AGtoA {
+}
+
+relationship "Tagged" as AtoH {
+}
+
+relationship "Change of" as CtoH {
+}
+
+relationship "Depended on" as AtoA {
+}
+
+relationship "Responsible on" as UtoA {
+}
+
+relationship "Marked on" as AtoM {
+}
+
+Change -1- CtoAG
+CtoAG =N= ActivityGroup
+
+ActivityGroup =1= AGtoA
+AGtoA =N= Activity
+
+Change -1- CtoH
+CtoH =N= Hashtag
+
+Activity -M- AtoM
+ActivityMark =1= AtoM
+
+Activity -N- AtoH
+Hashtag -N- AtoH
+
+Activity -N- AtoA
+Activity -M- AtoA
+
+User -N- UtoA
+Activity -M- UtoA
+
+
+@endchen

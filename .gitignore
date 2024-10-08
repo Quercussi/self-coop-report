@@ -1,4 +1,6 @@
 *.aux
+*.auxlock
+*.bbl
 *.fdb_latexmk
 *.fls
 *.gz
@@ -8,3 +10,6 @@
 *.out
 *.toc
 *.xdv
+*.pytxcode
+
+*.idea

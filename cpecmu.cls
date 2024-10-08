@@ -241,14 +241,22 @@
     \begin{center}%
       \hrule height 0.5in width 0pt % force vertical space at top
       \@titlesize\bf
-      โครงงานเลขที่ \@degreefieldAbbrTH~\@projectNo/\@acadyearBE
+      รายงานการปฏิบัติงานสหกิจศึกษา
+      % โครงงานเลขที่ \@degreefieldAbbrTH~\@projectNo/\@acadyearBE
       \par\vspace*{0.5in}\par
       เรื่อง
       \par\vspace*{0.5in}\par
       \@titleTH
+      \par\vspace*{0.15in}\par
+      \@titleEN
+      \par\vspace*{0.5in}\par
+      ณ บริษัท เอสซีบี เทคเอ็กซ์ จำกัด มหาชน
+
+      เลขที่ 19 ถนนรัชดาภิเษก แขวงจตุจักร 
+      เขตจตุจักร กรุงเทพมหานคร
       \par\vspace*{0.75in}\par
       โดย
-      \par\vspace*{0.75in}\par
+      \par\vspace*{0.5in}\par
       {\@authorsize%
       \begin{tabular}{@{}cl@{}}
       \@authorsTH{& รหัส~}{\\}%
@@ -256,7 +264,7 @@
       }%
       \vfill
       \ifproject%
-        โครงงานนี้ \\
+        รายงานนี้ \\
         เป็นส่วนหนึ่งของการศึกษาตามหลักสูตรปริญญาวิศวกรรมศาสตรบัณฑิต \\
       \else%
         รายงานนี้เป็นส่วนหนึ่งของวิชาสำรวจเพื่อโครงงาน \\
@@ -305,7 +313,7 @@
   \pagestyle{empty}
   \ifcpe%
     \@maketitleTH
-    \@maketitleEN
+    % \@maketitleEN
   \else
     \@maketitleEN
     \@maketitleTH
