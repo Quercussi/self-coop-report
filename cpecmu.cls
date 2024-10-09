@@ -643,7 +643,7 @@
 \newcounter{@plan@m}
 \newcounter{@plan@y}
 \newcounter{@plan@colscount}
-\newenvironment{plan}[4]{%
+\newenvironment{plan}[5]{%
   \setcounter{@plan@sm}{#1}
   \setcounter{@plan@sy}{#2}
   \setcounter{@plan@em}{#3}
@@ -692,7 +692,7 @@
   \noindent
   \xltabular{\linewidth}{|X|*{\the@plan@colscount}{c|}}
   \hline
-  \bf\ifenglish Task\else ขั้นตอนการดำเนินงาน\fi
+  \bf\ifenglish Task\else #5\fi
   \setcounter{@plan@m}{\value{@plan@sm}}
   \setcounter{@plan@y}{\value{@plan@sy}}
   \@plan@genheader
