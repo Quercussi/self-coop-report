@@ -18,6 +18,8 @@ Story Points ส่วนใหญ่จะอยู่ที่ฟีเจอ�
     \gantttitle{\x}{#2}%
   }%
 }
+\newcommand{\blackcell}{
+    \ganttbar[bar/.append style={fill opacity=1, pattern=crosshatch, pattern color=black},progress=100,inline=false]{}{16}{16}}
 
 % link: https://tex.stackexchange.com/a/579761
 \begin{table}[H]
@@ -47,22 +49,38 @@ Story Points ส่วนใหญ่จะอยู่ที่ฟีเจอ�
                                font=\small}
        ]{1}{16}
    
-     \gantttitle{2024}{16}\\
+    \gantttitle{2024}{16}\\
                  
-     \gantttitle{ก.ค.}{4} \gantttitle{ส.ค.}{4} \gantttitle{ก.ย.}{4} \gantttitle{ต.ค.}{4}\\
+    \gantttitle{ก.ค.}{4} \gantttitle{ส.ค.}{4} \gantttitle{ก.ย.}{4} \gantttitle{ต.ค.}{4}\\
 
-     \gantttitles{1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4}{1}\\
+    \gantttitles{1,2,3,4,1,2,3,4,1,2,3,4,1,2,3,4}{1}\\
     
+    \ganttbar[progress=100,inline=false]
+        {Change Runbook}{1}{9}
+    \ganttbar[progress=100,inline=false]
+        {}{11}{11}
+        \\
+    \ganttbar[progress=100,inline=false]
+        {DB Configuration}{10}{10}
+        \\
+    \ganttbar[progress=100,inline=false]
+        {Documentation}{12}{12}
+    \ganttbar[progress=100,inline=false]
+        {}{13}{13}
+        \\ 
+    \ganttbar[progress=100,inline=false]
+        {Custom Library}{12}{14} 
+        \\
+    \ganttbar[progress=100,inline=false]
+        {User Management}{12}{12}
+    \ganttbar[progress=100,inline=false]
+        {}{14}{15} 
+        \\
      \ganttbar[progress=100,inline=false]
-         {Change Runbook}{1}{2}\\
-     \ganttbar[progress=100,inline=false]
-         {DB Configuration}{3}{5}\\
-     \ganttbar[progress=100,inline=false]
-         {User Management}{5}{7} \\
-     \ganttbar[progress=100,inline=false]
-         {Documentation}{8}{9}\\ 
-     \ganttbar[progress=100,inline=false]
-         {Others}{6}{10}
+        {Others}{10}{11} 
+    \ganttbar[progress=100,inline=false]
+        {}{13}{14} 
+
     \end{ganttchart}
     \caption{ตารางแผนปฏิบัติงานสหกิจศึกษา}
     \label{tab:work-timeline}
