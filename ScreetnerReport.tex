@@ -8,7 +8,7 @@
 \acadyear{2024}
 
 \titleTH{การพัฒนาซอฟต์แวร์ไมโครเซอร์วิสเชิงพาณิชย์ ณ บริษัท เอสซีบี เทคเอกซ์}
-\titleEN{Commercial Microservices Software Developement at SCB TechX}
+\titleEN{Commercial Microservices Software Development at SCB TechX}
 
 \author{นายธนภัทร สมสิทธิ์}{Thanapat Somsit}{640610639}
 
@@ -28,6 +28,8 @@
 \usepackage{afterpage} % for outputting
 \usepackage{pdflscape} % for landscape figures and tables. 
 
+\usepackage{tabularx}
+
 \usepackage{float} % for table
 \usepackage{multirow} % Add this package in the preamble
 
@@ -36,7 +38,7 @@
 % \usepackage{natbib}    % for author-year citation styles
 % \usepackage{txfonts}
 % \usepackage{appendix}  % for appendices on a per-chapter basis
-% \usepackage{xtab}      % for tables that go over multiple pages
+\usepackage{xtab}      % for tables that go over multiple pages
 % \usepackage{subfigure} % for subfigures within a figure
 % \usepackage{pstricks,pdftricks} % for access to special PostScript and PDF commands
 % \usepackage{nomencl}   % if you have a list of abbreviations
@@ -49,6 +51,8 @@
 \usepackage{inconsolata}
 
 \usepackage{pgf-pie}
+
+\usepackage[final]{pdfpages}
 
 % \usepackage{fontspec}
 % \setmonofont{Consolas}
@@ -113,10 +117,10 @@
 % \include{chapters/background}
 % \include{chapters/approach}
 
-\include{chapters/company_products}
+% \include{chapters/company_products}
 \include{chapters/assigned_work}
 \include{chapters/work_result}
-\include{chapters/work_environment}
+% \include{chapters/work_environment}
 
 % \ifproject
 % \include{chapters/conclusion}
@@ -124,10 +128,10 @@
 
 \bibliography{ScreetnerReport}
 
-% \ifproject
-% \normalspacing
-% \appendix
-% \include{chapters/appendix}
+\ifproject
+\normalspacing
+\appendix
+\include{chapters/appendix}
 
 %% Display glossary (optional) -- need glossary option.
 % \ifglossary\glossarypage\fi
@@ -142,5 +146,5 @@
 % Your biosketch goes here. Make sure it sits inside
 % the \texttt{biosketch} environment.
 % \end{biosketch}
-% \fi % \ifproject
+\fi % \ifproject
 \end{document}
