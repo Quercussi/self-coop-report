@@ -250,7 +250,7 @@
       \par\vspace*{0.15in}\par
       \@titleEN
       \par\vspace*{0.5in}\par
-      ณ บริษัท เอสซีบี เทคเอ็กซ์ จำกัด มหาชน
+      ณ บริษัท เอสซีบี เทคเอ็กซ์ จำกัด
 
       เลขที่ 19 ถนนรัชดาภิเษก แขวงจตุจักร 
       เขตจตุจักร กรุงเทพมหานคร
@@ -446,6 +446,10 @@
     \begin{tabular}{@{}cl@{}}
       \\[1cm]
       \makebox[3.5in]{\dotfill} &
+        คณบดีคณะวิศวกรรมศาสตร์ \\
+      (รองศาสตราจารย์.ดร. ธงชัย ฟองสมุทร)
+      \\[1cm]
+      \makebox[3.5in]{\dotfill} &
         \ifcpe หัวหน้าภาควิชาวิศวกรรมคอมพิวเตอร์\else Department chair\fi\\
       (\ifcpe\@deptChairTH\else\@deptChairEN\fi)
     \end{tabular}
@@ -455,14 +459,11 @@
   \begin{flushright}
     \begin{tabular}{@{}cl@{}}
       \\[1cm]
-      \makebox[3.5in]{\dotfill} &
-        \ifcpe ประธานกรรมการ\else Main advisor / Chair\fi \\
+      \makebox[3.5in]{\dotfill} & \ifcpe อาจารย์ที่ปรึกษาสหกิจศึกษา\else Main advisor / Chair\fi \\
       (\ifcpe\@advisorTH\else\@advisorEN\fi)
-      \setcounter{@committeeIdx}{0}%
-      \@listcommittee{\ifcpe TH\else EN\fi}{\\[1cm]
-        \makebox[3.5in]{\dotfill} & \ifcpe กรรมการ\else Committee member\fi \\
-        (}
-      {)}%
+      \\[1cm]
+      \makebox[3.5in]{\dotfill} & พนักงานที่ปรึกษา \\
+      (นายกรันยศ รัศมี)\\
     \end{tabular}
   \end{flushright}
   \egroup
