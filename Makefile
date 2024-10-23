@@ -1,7 +1,7 @@
 # A Makefile for building TeX documents
 #
 
-DOC = ScreetnerReport
+DOC = self-coop-report
 # Set $(DOC) to the name of the document, without extension.
 TEXDIR = ../self-coop-report
 # Set $(TEXDIR) to point to the directory containing cornell.cls.
