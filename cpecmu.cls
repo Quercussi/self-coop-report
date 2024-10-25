@@ -207,6 +207,7 @@
   \@listauthors{EN}{#1}{#2}%
 }
 
+\newcommand{\@semester}{1}
 \newcommand{\@acadyearBE}{2563}
 \newcommand{\@acadyearAD}{2020}
 \newcounter{@acadyear}
@@ -239,7 +240,9 @@
 \newcommand{\@maketitleTH}{%
   \begin{titlepage}%
     \begin{center}%
-      \hrule height 0.5in width 0pt % force vertical space at top
+      \hrule height 0.5in width 0pt % force vertical space at t
+      \includegraphics[scale=0.125]{resources/RibbinENG1.png}
+      \par\vspace*{0.25in}\par
       \@titlesize\bf
       รายงานการปฏิบัติงานสหกิจศึกษา
       % โครงงานเลขที่ \@degreefieldAbbrTH~\@projectNo/\@acadyearBE
@@ -254,25 +257,22 @@
 
       เลขที่ 19 ถนนรัชดาภิเษก แขวงจตุจักร 
       เขตจตุจักร กรุงเทพมหานคร
-      \par\vspace*{0.75in}\par
+      \par\vspace*{0.3in}\par
       โดย
-      \par\vspace*{0.5in}\par
+      \par\vspace*{0.3in}\par
       {\@authorsize%
       \begin{tabular}{@{}cl@{}}
       \@authorsTH{& รหัส~}{\\}%
       \end{tabular}%
       }%
       \vfill
-      \ifproject%
-        รายงานนี้ \\
-        เป็นส่วนหนึ่งของการศึกษาตามหลักสูตรปริญญาวิศวกรรมศาสตรบัณฑิต \\
-      \else%
-        รายงานนี้เป็นส่วนหนึ่งของวิชาสำรวจเพื่อโครงงาน \\
-        ตามหลักสูตรปริญญาวิศวกรรมศาสตรบัณฑิต \\
-      \fi
+      % TODO formalize rreport scover 
+      รายงานนี้ \\
+      เป็นส่วนหนึ่งของกระบวนวิชา 261495 สหกิจศึกษา \\
+      ภาคการศึกษาที่~ \@semester~  ปีการศึกษา~\@acadyearBE
+      \\ 
       ภาควิชาวิศวกรรมคอมพิวเตอร์ \\
-      คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเชียงใหม่ \\
-      ปีการศึกษา~\@acadyearBE
+      คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเชียงใหม่ 
     \end{center}
     \vspace{0.25in}
   \end{titlepage}
@@ -312,6 +312,7 @@
   \pagenumbering{roman} % title page is counted but not numbered
   \pagestyle{empty}
   \ifcpe%
+    \@maketitleTH
     \@maketitleTH
     % \@maketitleEN
   \else
@@ -432,7 +433,6 @@
   \bgroup
   \ifcpe\@summaryTH\else\@summaryEN\fi%
   \par\vspace*{1cm}\par
-  % TODO, change commitee
   \ifcpe%
     ภาควิชาวิศวกรรมคอมพิวเตอร์ คณะวิศวกรรมศาสตร์ มหาวิทยาลัยเชียงใหม่
     ได้อนุมัติให้โครงงานนี้เป็นส่วน\-หนึ่งของการศึกษาตามหลักสูตรปริญญาวิศวกรรมศาสตรบัณฑิต
