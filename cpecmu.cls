@@ -266,7 +266,6 @@
       \end{tabular}%
       }%
       \vfill
-      % TODO formalize rreport scover 
       รายงานนี้ \\
       เป็นส่วนหนึ่งของกระบวนวิชา 261495 สหกิจศึกษา \\
       ภาคการศึกษาที่~ \@semester~  ปีการศึกษา~\@acadyearBE

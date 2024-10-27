@@ -1,27 +1,29 @@
-\newcommand{\includepdfwithfirstpagefit}[1]{
-    \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{#1}
-    \includepdf[pages=2-, fitpaper=true, nup=1x1, frame=false]{#1}
+\newcommand{\skibidione}[1]{
+    \begin{center}
+    \includegraphics[width=\textwidth, keepaspectratio]{#1}
+    \end{center}
 }
 
-\newcommand{\includepdfwithonepage}[1]{
-    \includegraphics[width=\textwidth, height=\textheight, keepaspectratio]{#1}
+\newcommand{\skibidi}[1]{
+    \begin{center}
+        \includegraphics[scale=0.7, keepaspectratio]{#1}
+    \end{center}
+    \includepdf[pages=2-, pagecommand={},height=\textheight, nup=1x1, frame=false, keepaspectratio]{#1}
 }
 
-\chapter{เอกสารเกี่ยวข้อง}
-
-TODO add 3-4
+\chapter{เอกสาร}
 
 \section{วศ.สก.-06}
-\includepdfwithfirstpagefit{resources/bureaucrats/coop6.pdf}
+\skibidi{resources/bureaucrats/coop6.pdf}
 
 \section{วศ.สก.-10}
-\includepdfwithfirstpagefit{resources/bureaucrats/coop10.pdf}
+\skibidi{resources/bureaucrats/coop10.pdf}
 
 \section{วศ.สก.-11}
-\includepdfwithonepage{resources/bureaucrats/coop11.pdf}
+\skibidione{resources/bureaucrats/coop11.pdf}
 
 \section{หนังสือยินยอมให้เผยแพร่รายงานปฏิบัติงานสหกิจศึกษา}
-\includepdfwithonepage{resources/bureaucrats/publish-consent.pdf}
+\skibidione{resources/bureaucrats/publish-consent.pdf}
 
 \chapter{ตารางแสดงรายละเอียดการสะสม Story Points}
 \section{ตารางแสดงรายละเอียดการสะสม Story Points ของ Change Runbook}
@@ -58,31 +60,27 @@ TODO add 3-4
     \end{tabularx}
     \caption{ตารางแสดงรายละเอียดการสะสม Story Points ของ Change Runbook}
     \label{tab:story-point-table}
-  \end{table}
+\end{table}
 
-  \section{ตารางแสดงรายละเอียดการสะสม Story Points อื่น ๆ}
+\section{ตารางแสดงรายละเอียดการสะสม Story Points อื่น ๆ}
   \begin{table}[H]
       \centering
       \begin{tabularx}{0.85\textwidth}{X|c}
           \attr{รายละเอียด} & \attr{Story Points} \\
           \hline\hline
-          \textbf{User Management} & \textbf{1} \\
-          TODO & 2351 \\
-          TODO & 1954 \\
+          \textbf{User Management} & \textbf{13} \\
+          Data Synchronization and Service Integrations & 13 \\
           \hline
-          \textbf{Documentation} & \textbf{1} \\
-          TODO & 2351 \\
-          TODO & 1954 \\
+          \textbf{Documentation} & \textbf{3} \\
+          Document Reader on Services and Infrastruture Managerment & 3 \\
           \hline
-          \textbf{Custom Library} & \textbf{1} \\
-          TODO & 2351 \\
-          TODO & 1954 \\
+          \textbf{Custom Library} & \textbf{5} \\
+          Custom Library Management & 5 \\
           \hline
-          \textbf{Others} & \textbf{1} \\
-          TODO & 2351 \\
-          TODO & 1954 \\
+          \textbf{Others} & \textbf{3} \\
+          Tool Connection Data Library & 3 \\
           \hline\hline
-          \textbf{รวม} & TODO
+          \textbf{รวม} & 24
       \end{tabularx}
       \caption{ตารางแสดงรายละเอียดการสะสม Story Points อื่น ๆ }
       \label{tab:story-point-table-others}
